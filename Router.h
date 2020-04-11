@@ -8,7 +8,12 @@
 
 #ifdef _WIN32
 #include <WinSock2.h>
-
+#elif defined(__linux__) || defined(__CYGWIN__)
+#include "Linux.h"
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 #endif
 
 #include "Methods.h"
