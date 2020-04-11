@@ -39,9 +39,28 @@ Example:
   }
   ```
   
+  # Multithreading
+  really creative
+  ```cpp
+  #define PORT 3000
+  
+  #include <Router.h>
+  
+  using namespace DeltaHttp;
+  
+  ...
+  int main() {
+    Router r;
+    ...
+    
+    // Start with 4 Threads
+    (r * 4).Listen(PORT);
+  }
+  ```
+  
   # Using your own Response class
   ```cpp
-  
+  ...
   #include <Response.h>
   
   class MyResponse : public Response {
