@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstring>
 #include <vector>
 #include "Methods.h"
 #include "Header.h"

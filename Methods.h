@@ -18,16 +18,6 @@ namespace DeltaHttp {
 		All = GET | POST | PATCH | PUT | DELETE | OPTIONS
 	};
 
-	constexpr HttpMethod operator ""_Method(const char* str, size_t) {
-		return iequals(str, "GET") ? HttpMethod::GET :
-			iequals(str, "POST") ? HttpMethod::POST :
-			iequals(str, "PATCH") ? HttpMethod::PATCH :
-			iequals(str, "PUT") ? HttpMethod::PUT :
-			iequals(str, "DELETE") ? HttpMethod::DELETE :
-			iequals(str, "OPTIONS") ? HttpMethod::OPTIONS :
-			(HttpMethod)0;
-	}
-
 	inline HttpMethod FromString(const std::string& str) {
 		return iequals(str, "GET") ? HttpMethod::GET :
 			iequals(str, "POST") ? HttpMethod::POST :

@@ -9,6 +9,9 @@
 
 #if _WIN32
 #include <WinSock2.h>
+#elif defined(__linux__) || defined(__CYGWIN__)
+#include <unistd.h>
+#include "Linux.h"
 #endif
 
 namespace DeltaHttp {
@@ -38,7 +41,7 @@ namespace DeltaHttp {
 		}
 
 		template<typename T>
-		void Response::Write(const std::vector<T>& values)
+		void Write(const std::vector<T>& values)
 		{
 			data.resize(data.size() + values.size());
 			memcpy(&data[data.size() - values.size()], &values[0], values.size());
