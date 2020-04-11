@@ -11,7 +11,7 @@ Example:
   
   using namespace DeltaHttp;
   
-  void ExampleFunction(const Request& req, PResponse& res) {
+  void ExampleFunction(const Request& req, Response& res) {
     res.Write("Hello World!");
   }
   
@@ -24,7 +24,7 @@ Example:
       
     // Use lambda function
     r.HandleRoute("/lambda",
-      [](const Request& req, PResponse& res) {
+      [](const Request& req, Response& res) {
         res.Write("Hello World!");
       });
     
